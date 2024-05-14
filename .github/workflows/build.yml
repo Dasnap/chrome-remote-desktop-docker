@@ -7,7 +7,7 @@ name: Build Docker image
 
 on:
   push:
-    branches-ignore:
+    branches:
       - master
   pull_request:
     branches:
@@ -24,7 +24,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: cardinalby/chrome-remote-desktop
+          images: dazznap/chrome-remote-desktop
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
